@@ -161,18 +161,18 @@ export default function MapGuess({
                 : "bg-gray-400 cursor-not-allowed"
             }`}
           >
-            Make Guess
+            推測する
           </button>
         ) : (
           <div class="text-center text-sm">
             {distance !== null && (
               <p>
-                <span class="font-semibold">Distance:</span> {distance.toFixed(1)} km
+                <span class="font-semibold">距離:</span> {distance.toFixed(1)} km
               </p>
             )}
             {score !== null && (
               <p>
-                <span class="font-semibold">Score:</span> {score} points
+                <span class="font-semibold">スコア:</span> {score} ポイント
               </p>
             )}
           </div>

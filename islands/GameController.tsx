@@ -71,13 +71,13 @@ export default function GameController({
     <div class="min-h-full">
       <header class="bg-green-600 text-white p-4 shadow-md">
         <div class="container mx-auto flex justify-between items-center">
-          <h1 class="text-2xl font-bold">DenoGuessr</h1>
+          <h1 class="text-2xl font-bold">Denoくんのジオゲッサー</h1>
           <div class="flex items-center space-x-4">
             <span class="font-semibold">
-              Round: {gameState.currentRound}/{gameState.totalRounds}
+              ラウンド: {gameState.currentRound}/{gameState.totalRounds}
             </span>
             <span class="font-semibold">
-              Score: {gameState.totalScore}
+              スコア: {gameState.totalScore}
             </span>
           </div>
         </div>
@@ -116,8 +116,8 @@ export default function GameController({
               class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-colors"
             >
               {gameState.currentRound >= gameState.totalRounds
-                ? "See Final Results"
-                : "Next Round"}
+                ? "最終結果を見る"
+                : "次のラウンド"}
             </button>
           ) : null}
         </div>
@@ -125,18 +125,18 @@ export default function GameController({
         {/* Results Display (shown after guess) */}
         {gameState.showResults && (
           <div class="mt-6 bg-white rounded-lg shadow-md p-4">
-            <h2 class="text-xl font-bold mb-2">Round Results</h2>
+            <h2 class="text-xl font-bold mb-2">ラウンド結果</h2>
             <p>
-              The location was: <strong>{gameState.currentLocation.name}</strong>
+              場所: <strong>{gameState.currentLocation.name}</strong>
               {gameState.currentLocation.description && (
                 <span> - {gameState.currentLocation.description}</span>
               )}
             </p>
             <p class="mt-2">
-              Your guess was <span>{gameState.distanceKm.toFixed(1)}</span> km away.
+              あなたの推測は <span>{gameState.distanceKm.toFixed(1)}</span> km離れていました。
             </p>
             <p class="mt-2">
-              Points earned this round: <strong>{gameState.roundScore}</strong>
+              このラウンドで獲得したポイント: <strong>{gameState.roundScore}</strong>
             </p>
           </div>
         )}
@@ -145,16 +145,16 @@ export default function GameController({
         {gameState.gameOver && (
           <div class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
             <div class="bg-white rounded-lg shadow-xl p-8 max-w-md w-full">
-              <h2 class="text-2xl font-bold mb-4">Game Over!</h2>
+              <h2 class="text-2xl font-bold mb-4">ゲーム終了！</h2>
               <p class="text-lg mb-2">
-                Your final score: <strong>{gameState.totalScore}</strong>
+                最終スコア: <strong>{gameState.totalScore}</strong>
               </p>
               <div class="mt-6 flex justify-center">
                 <a
                   href="/"
                   class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-colors"
                 >
-                  Play Again
+                  もう一度プレイ
                 </a>
               </div>
             </div>

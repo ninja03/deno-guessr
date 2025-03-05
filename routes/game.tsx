@@ -27,7 +27,7 @@ export default function Game({ data }: PageProps<GameProps>) {
   return (
     <>
       <Head>
-        <title>DenoGuessr - Test Your Geography</title>
+        <title>Denoくんのジオゲッサー</title>
         <link
           rel="stylesheet"
           href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -44,7 +44,7 @@ export default function Game({ data }: PageProps<GameProps>) {
         
         <footer class="bg-green-700 text-white p-4 mt-auto">
           <div class="container mx-auto text-center">
-            <p>&copy; {new Date().getFullYear()} DenoGuessr - A GeoGuessr Clone</p>
+            <p>&copy; {new Date().getFullYear()} Denoくんのジオゲッサー</p>
           </div>
         </footer>
       </div>
