@@ -33,6 +33,14 @@ export default function Home() {
           <div class="container mx-auto text-center">
             <p>&copy; {new Date().getFullYear()} Denoくんのジオゲッサー</p>
             <p class="mt-2 text-sm">Deno Freshで構築</p>
+            <a 
+              href="https://github.com/ninja03/deno-guessr" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="inline-block mt-3 text-white hover:text-green-200 transition-colors"
+            >
+              GitHub
+            </a>
           </div>
         </footer>
       </div>
