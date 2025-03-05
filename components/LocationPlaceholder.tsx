@@ -82,11 +82,11 @@ export function LocationPlaceholder(props: LocationPlaceholderProps) {
           } else {
             // No Street View data available, show a fallback message
             container.innerHTML = `
-              <div class="flex items-center justify-center w-full h-full bg-gray-200 text-gray-600 p-4 text-center">
+              <div class="flex items-center justify-center w-full h-full bg-gray-900 text-blue-100 p-4 text-center border border-blue-800">
                 <div>
-                  <div class="text-xl font-semibold mb-3">${props.name}</div>
-                  <p>このロケーションでのストリートビューデータは利用できません。</p>
-                  <p class="text-sm mt-2">緯度: ${lat.toFixed(4)}, 経度: ${lng.toFixed(4)}</p>
+                  <div class="text-xl font-semibold mb-3 night-title-glow">${props.name}</div>
+                  <p class="night-text-glow">このロケーションでのストリートビューデータは利用できません。</p>
+                  <p class="text-sm mt-2 text-blue-300">緯度: ${lat.toFixed(4)}, 経度: ${lng.toFixed(4)}</p>
                 </div>
               </div>
             `;
@@ -111,20 +111,20 @@ export function LocationPlaceholder(props: LocationPlaceholderProps) {
         ref={streetViewRef}
       >
         {/* Initial loading state */}
-        <div class="flex items-center justify-center w-full h-full bg-gray-100">
-          <div class="text-gray-500">
+        <div class="flex items-center justify-center w-full h-full bg-gray-900">
+          <div class="text-blue-300">
             <svg class="animate-spin h-10 w-10 mx-auto mb-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
               <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
               <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
             </svg>
-            <div>ストリートビューを読み込み中...</div>
+            <div class="night-text-glow">ストリートビューを読み込み中...</div>
           </div>
         </div>
       </div>
       
       {/* Location name overlay - this will remain visible even during loading */}
-      <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-2 z-10">
-        <div class="text-xl font-semibold">{props.name}</div>
+      <div class="absolute bottom-0 left-0 right-0 bg-blue-900 bg-opacity-70 text-white p-2 z-10 border-t border-blue-700">
+        <div class="text-xl font-semibold night-title-glow">{props.name}</div>
       </div>
     </div>
   );

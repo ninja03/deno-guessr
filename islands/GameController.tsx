@@ -85,7 +85,7 @@ export default function GameController({
       <main class="container mx-auto p-4">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
           {/* Location Street View Area */}
-          <div class="bg-white rounded-lg shadow-md overflow-hidden h-96">
+          <div class="bg-gray-900 rounded-lg shadow-md overflow-hidden h-96 border border-blue-800">
             <LocationPlaceholder
               locationId={gameState.currentLocation.imageUrl.split('/').pop()?.split('.')[0] || ''}
               name={gameState.currentLocation.name}
@@ -95,7 +95,7 @@ export default function GameController({
           </div>
 
           {/* Map Area */}
-          <div class="bg-white rounded-lg shadow-md h-96">
+          <div class="bg-gray-900 rounded-lg shadow-md h-96 border border-blue-800">
             <MapGuess
               onGuessSubmit={handleGuessSubmit}
               actualLocation={{
@@ -124,35 +124,35 @@ export default function GameController({
 
         {/* Results Display (shown after guess) */}
         {gameState.showResults && (
-          <div class="mt-6 bg-white rounded-lg shadow-md p-4">
-            <h2 class="text-xl font-bold mb-2">ラウンド結果</h2>
-            <p>
+          <div class="mt-6 bg-gray-900 text-white rounded-lg shadow-md p-4 border border-blue-800">
+            <h2 class="text-xl font-bold mb-2 night-title-glow">ラウンド結果</h2>
+            <p class="night-text-glow">
               場所: <strong>{gameState.currentLocation.name}</strong>
               {gameState.currentLocation.description && (
                 <span> - {gameState.currentLocation.description}</span>
               )}
             </p>
-            <p class="mt-2">
-              あなたの推測は <span>{gameState.distanceKm.toFixed(1)}</span> km離れていました。
+            <p class="mt-2 night-text-glow">
+              あなたの推測は <span class="text-blue-300">{gameState.distanceKm.toFixed(1)}</span> km離れていました。
             </p>
-            <p class="mt-2">
-              このラウンドで獲得したポイント: <strong>{gameState.roundScore}</strong>
+            <p class="mt-2 night-text-glow">
+              このラウンドで獲得したポイント: <strong class="text-blue-300">{gameState.roundScore}</strong>
             </p>
           </div>
         )}
 
         {/* Game Over Screen */}
         {gameState.gameOver && (
-          <div class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
-            <div class="bg-white rounded-lg shadow-xl p-8 max-w-md w-full">
-              <h2 class="text-2xl font-bold mb-4">ゲーム終了！</h2>
-              <p class="text-lg mb-2">
-                最終スコア: <strong>{gameState.totalScore}</strong>
+          <div class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+            <div class="bg-gray-900 text-white rounded-lg shadow-xl p-8 max-w-md w-full border border-blue-800">
+              <h2 class="text-2xl font-bold mb-4 night-title-glow">ゲーム終了！</h2>
+              <p class="text-lg mb-2 night-text-glow">
+                最終スコア: <strong class="text-blue-300">{gameState.totalScore}</strong>
               </p>
               <div class="mt-6 flex justify-center">
                 <a
                   href="/"
-                  class="bg-blue-700 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors"
+                  class="bg-blue-700 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors shadow-lg"
                 >
                   もう一度プレイ
                 </a>
