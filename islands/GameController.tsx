@@ -91,6 +91,7 @@ export default function GameController({
               name={gameState.currentLocation.name}
               latitude={gameState.currentLocation.latitude}
               longitude={gameState.currentLocation.longitude}
+              showLocationName={gameState.guessSubmitted}
             />
           </div>
 

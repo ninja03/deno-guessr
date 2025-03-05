@@ -8,6 +8,7 @@ interface LocationPlaceholderProps {
   className?: string;
   latitude?: number;
   longitude?: number;
+  showLocationName?: boolean;
 }
 
 declare global {
@@ -122,10 +123,12 @@ export function LocationPlaceholder(props: LocationPlaceholderProps) {
         </div>
       </div>
       
-      {/* Location name overlay - this will remain visible even during loading */}
-      <div class="absolute bottom-0 left-0 right-0 bg-blue-900 bg-opacity-70 text-white p-2 z-10 border-t border-blue-700">
-        <div class="text-xl font-semibold night-title-glow">{props.name}</div>
-      </div>
+      {/* Location name overlay - only shown if showLocationName is true */}
+      {props.showLocationName && (
+        <div class="absolute bottom-0 left-0 right-0 text-white p-2 z-10">
+          <div class="text-xl font-semibold night-title-glow">{props.name}</div>
+        </div>
+      )}
     </div>
   );
 }
