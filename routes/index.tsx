@@ -8,7 +8,8 @@ export default function Home() {
       </Head>
       <div class="min-h-screen bg-gradient-to-b from-green-500 to-green-700 flex flex-col">
         <header class="bg-green-800 text-white p-4 shadow-md">
-          <div class="container mx-auto">
+          <div class="container mx-auto flex items-center gap-3">
+            <img src="/deno_matrix.png" alt="Deno Logo" class="w-10 h-10" />
             <h1 class="text-3xl font-bold">Denoくんのジオゲッサー</h1>
           </div>
         </header>

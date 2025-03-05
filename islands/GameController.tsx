@@ -71,7 +71,6 @@ export default function GameController({
     <div class="min-h-full">
       <header class="bg-green-600 text-white p-4 shadow-md">
         <div class="container mx-auto flex justify-between items-center">
-          <h1 class="text-2xl font-bold">Denoくんのジオゲッサー</h1>
           <div class="flex items-center space-x-4">
             <span class="font-semibold">
               ラウンド: {gameState.currentRound}/{gameState.totalRounds}

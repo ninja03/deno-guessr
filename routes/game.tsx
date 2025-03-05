@@ -36,6 +36,12 @@ export default function Game({ data }: PageProps<GameProps>) {
         />
       </Head>
       <div class="min-h-screen bg-gray-100 flex flex-col">
+        <header class="bg-green-800 text-white p-4 shadow-md">
+          <div class="container mx-auto flex items-center gap-3">
+            <img src="/deno_matrix.png" alt="Deno Logo" class="w-10 h-10" />
+            <h1 class="text-3xl font-bold">Denoくんのジオゲッサー</h1>
+          </div>
+        </header>
         <GameController
           initialLocation={data.initialLocation}
           totalRounds={data.totalRounds}

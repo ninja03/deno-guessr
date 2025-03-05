@@ -46,6 +46,14 @@ export default function MapGuess({
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         maxZoom: 19,
       }).addTo(mapInstance);
+      
+      // Create custom pin icon
+      const customPinIcon = L.icon({
+        iconUrl: "/pin.webp",
+        iconSize: [64, 64], // Size of the icon
+        iconAnchor: [32, 64], // Point of the icon which corresponds to marker's location
+        popupAnchor: [0, -64] // Point from which popups should open relative to the iconAnchor
+      });
 
       // Setup click handler to place a marker
       let currentMarker: any = null;
@@ -58,8 +66,8 @@ export default function MapGuess({
           mapInstance.removeLayer(currentMarker);
         }
         
-        // Add a new marker
-        currentMarker = L.marker([lat, lng]).addTo(mapInstance);
+        // Add a new marker with custom pin icon
+        currentMarker = L.marker([lat, lng], { icon: customPinIcon }).addTo(mapInstance);
         setMarker(currentMarker);
         
         // Update button to show it's ready to submit
