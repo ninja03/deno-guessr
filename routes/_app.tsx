@@ -1,7 +1,6 @@
 import { type PageProps } from "$fresh/server.ts";
 import Rain from "../islands/Rain.tsx";
 import Stars from "../islands/Stars.tsx";
-import Moon from "../islands/Moon.tsx";
 
 export default function App({ Component }: PageProps) {
   return (
@@ -15,7 +14,6 @@ export default function App({ Component }: PageProps) {
       </head>
       <body>
         <Stars />
-        <Moon />
         <Rain />
         <Component />
       </body>

@@ -36,20 +36,6 @@ body {
   50% { opacity: 0.8; }
 }
 
-/* Moon */
-.moon {
-  position: fixed;
-  top: 50px;
-  right: 50px;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #fff, #ecf0f1 30%, #bdc3c7 70%, #95a5a6 100%);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
-  z-index: 901;
-  pointer-events: none;
-}
-
 /* Rain Animation */
 .rain-container {
   position: fixed;
