@@ -1,3 +1,93 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Add your custom styles here */
+
+/* Placeholder styles for location images */
+.location-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  font-weight: bold;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.location-placeholder::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.location-placeholder > * {
+  z-index: 2;
+  position: relative;
+}
+
+/* Location specific placeholders */
+[data-location="tokyo_tower"] {
+  background-color: #e15f41;
+}
+
+[data-location="eiffel_tower"] {
+  background-color: #546de5;
+}
+
+[data-location="new_york"] {
+  background-color: #3dc1d3;
+}
+
+[data-location="sydney_opera"] {
+  background-color: #f78fb3;
+}
+
+[data-location="machu_picchu"] {
+  background-color: #4b6584;
+}
+
+[data-location="cape_town"] {
+  background-color: #f3a683;
+}
+
+[data-location="london_eye"] {
+  background-color: #574b90;
+}
+
+[data-location="burj_khalifa"] {
+  background-color: #303952;
+}
+
+[data-location="golden_gate"] {
+  background-color: #e77f67;
+}
+
+[data-location="taj_mahal"] {
+  background-color: #786fa6;
+}
+
+/* Game interface styling */
+.correct-location-marker {
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Leaflet Map Fixes */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+}
+
+.leaflet-control-attribution {
+  font-size: 9px;
+}
