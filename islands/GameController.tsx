@@ -85,12 +85,13 @@ export default function GameController({
 
       <main class="container mx-auto p-4">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-          {/* Location Image Area */}
+          {/* Location Street View Area */}
           <div class="bg-white rounded-lg shadow-md overflow-hidden h-96">
-            {/* Using placeholder component instead of actual images for this demo */}
             <LocationPlaceholder
               locationId={gameState.currentLocation.imageUrl.split('/').pop()?.split('.')[0] || ''}
               name={gameState.currentLocation.name}
+              latitude={gameState.currentLocation.latitude}
+              longitude={gameState.currentLocation.longitude}
             />
           </div>
 
