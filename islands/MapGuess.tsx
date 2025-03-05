@@ -41,9 +41,10 @@ export default function MapGuess({
       // Create the map centered at a default position
       const mapInstance = L.map(mapRef.current).setView([20, 0], 2);
 
-      // Add tile layer (OpenStreetMap)
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      // Add dark tile layer (CartoDB Dark Matter)
+      L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
         maxZoom: 19,
       }).addTo(mapInstance);
       
@@ -74,8 +75,8 @@ export default function MapGuess({
         const submitBtn = document.getElementById("submit-guess");
         if (submitBtn) {
           submitBtn.removeAttribute("disabled");
-          submitBtn.classList.remove("bg-gray-400");
-          submitBtn.classList.add("bg-green-600", "hover:bg-green-700");
+          submitBtn.classList.remove("bg-gray-600");
+          submitBtn.classList.add("bg-blue-700", "hover:bg-blue-600");
         }
       });
       
@@ -119,23 +120,23 @@ export default function MapGuess({
         scoreEl.textContent = roundScore.toString();
       }
       
-      // Add marker for actual location
+      // Add marker for actual location with enhanced visibility for night theme
       const correctMarker = L.marker([actualLocation.lat, actualLocation.lng], {
         icon: L.divIcon({
           className: "correct-location-marker",
-          html: '<div style="background-color: #4CAF50; width: 24px; height: 24px; border-radius: 50%; border: 2px solid white;"></div>',
+          html: '<div style="background-color: #64B5F6; width: 24px; height: 24px; border-radius: 50%; border: 2px solid white; box-shadow: 0 0 10px rgba(135, 206, 250, 0.8);"></div>',
           iconSize: [24, 24],
           iconAnchor: [12, 12],
         }),
       }).addTo(map);
       
-      // Draw a line between guess and actual location
+      // Draw a line between guess and actual location with enhanced visibility
       const line = L.polyline(
         [
           [guessCoordinates.lat, guessCoordinates.lng],
           [actualLocation.lat, actualLocation.lng],
         ],
-        { color: "#FF5722", weight: 3, opacity: 0.7, dashArray: "10, 10" }
+        { color: "#64B5F6", weight: 3, opacity: 0.8, dashArray: "10, 10" }
       ).addTo(map);
       
       // Fit the map to show both markers
@@ -157,7 +158,7 @@ export default function MapGuess({
   return (
     <div class="h-full flex flex-col">
       <div ref={mapRef} class="flex-1"></div>
-      <div class="p-4 bg-gray-50 border-t">
+      <div class="p-4 bg-gray-900 text-white border-t border-gray-700">
         {!showResults ? (
           <button
             id="submit-guess"
@@ -165,8 +166,8 @@ export default function MapGuess({
             disabled={!marker}
             class={`w-full py-2 px-4 rounded-md text-white transition-colors ${
               marker
-                ? "bg-green-600 hover:bg-green-700"
-                : "bg-gray-400 cursor-not-allowed"
+                ? "bg-blue-700 hover:bg-blue-600"
+                : "bg-gray-600 cursor-not-allowed"
             }`}
           >
             推測する

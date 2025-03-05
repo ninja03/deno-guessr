@@ -11,6 +11,9 @@ import * as $index from "./routes/index.tsx";
 import * as $Counter from "./islands/Counter.tsx";
 import * as $GameController from "./islands/GameController.tsx";
 import * as $MapGuess from "./islands/MapGuess.tsx";
+import * as $Moon from "./islands/Moon.tsx";
+import * as $Rain from "./islands/Rain.tsx";
+import * as $Stars from "./islands/Stars.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -26,6 +29,9 @@ const manifest = {
     "./islands/Counter.tsx": $Counter,
     "./islands/GameController.tsx": $GameController,
     "./islands/MapGuess.tsx": $MapGuess,
+    "./islands/Moon.tsx": $Moon,
+    "./islands/Rain.tsx": $Rain,
+    "./islands/Stars.tsx": $Stars,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

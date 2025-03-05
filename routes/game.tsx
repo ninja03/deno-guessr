@@ -35,11 +35,11 @@ export default function Game({ data }: PageProps<GameProps>) {
           crossOrigin=""
         />
       </Head>
-      <div class="min-h-screen bg-gray-100 flex flex-col">
-        <header class="bg-green-800 text-white p-4 shadow-md">
+      <div class="min-h-screen bg-gradient-to-b from-blue-900 to-black flex flex-col">
+        <header class="bg-gray-900 text-white p-4 shadow-md">
           <div class="container mx-auto flex items-center gap-3">
             <img src="/deno_matrix.png" alt="Deno Logo" class="w-10 h-10" />
-            <h1 class="text-3xl font-bold">Denoくんのジオゲッサー</h1>
+            <h1 class="text-3xl font-bold night-title-glow">Denoくんのジオゲッサー</h1>
           </div>
         </header>
         <GameController
@@ -48,9 +48,9 @@ export default function Game({ data }: PageProps<GameProps>) {
           allLocations={data.allLocations}
         />
         
-        <footer class="bg-green-700 text-white p-4 mt-auto">
+        <footer class="bg-gray-900 text-white p-4 mt-auto">
           <div class="container mx-auto text-center">
-            <p>&copy; {new Date().getFullYear()} Denoくんのジオゲッサー</p>
+            <p class="night-text-glow">&copy; {new Date().getFullYear()} Denoくんのジオゲッサー</p>
           </div>
         </footer>
       </div>

@@ -69,13 +69,13 @@ export default function GameController({
 
   return (
     <div class="min-h-full">
-      <header class="bg-green-600 text-white p-4 shadow-md">
+      <header class="bg-blue-800 text-white p-4 shadow-md">
         <div class="container mx-auto flex justify-between items-center">
           <div class="flex items-center space-x-4">
-            <span class="font-semibold">
+            <span class="font-semibold night-text-glow">
               ラウンド: {gameState.currentRound}/{gameState.totalRounds}
             </span>
-            <span class="font-semibold">
+            <span class="font-semibold night-text-glow">
               スコア: {gameState.totalScore}
             </span>
           </div>
@@ -109,18 +109,18 @@ export default function GameController({
         </div>
 
         {/* Game Controls */}
-        <div class="mt-6 flex justify-center">
-          {gameState.showResults ? (
-            <button
-              onClick={nextRound}
-              class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-colors"
-            >
-              {gameState.currentRound >= gameState.totalRounds
-                ? "最終結果を見る"
-                : "次のラウンド"}
-            </button>
-          ) : null}
-        </div>
+          <div class="mt-6 flex justify-center">
+            {gameState.showResults ? (
+              <button
+                onClick={nextRound}
+                class="bg-blue-700 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors"
+              >
+                {gameState.currentRound >= gameState.totalRounds
+                  ? "最終結果を見る"
+                  : "次のラウンド"}
+              </button>
+            ) : null}
+          </div>
 
         {/* Results Display (shown after guess) */}
         {gameState.showResults && (
@@ -152,7 +152,7 @@ export default function GameController({
               <div class="mt-6 flex justify-center">
                 <a
                   href="/"
-                  class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition-colors"
+                  class="bg-blue-700 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors"
                 >
                   もう一度プレイ
                 </a>
